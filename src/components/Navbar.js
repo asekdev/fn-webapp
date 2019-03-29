@@ -1,55 +1,37 @@
 import React, { Component } from "react";
-import { Button, Menu, Icon } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import NavBarCommon from "./common/NavbarCommon";
+
 
 class Navbar extends Component {
-  state = { activeItem: "dashboard" };
+
+  state = {
+    visible: false
+  };
+
+  leftMenuItems = [
+    { as: "a", content: "Daily Store", key: "dailystore",},
+    { as: "a", content: "Upcoming Items", key: "upcoming" }
+  ];
+
+  rightItems = [
+
+  ];
+
+  handlePusher = () => {
+    const { visible } = this.state;
+
+    if (visible) this.setState({ visible: false });
+  };
+
+  handleToggle = () => this.setState({ visible: !this.state.visible });
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
   };
 
   render() {
-    const { activeItem } = this.state;
     return (
-      <Menu size="massive" color="violet" inverted secondary>
-        <Menu.Item
-          as={Link}
-          to="/"
-          name="dashboard"
-          onClick={this.handleItemClick}
-        >
-          <Icon name="gamepad" />
-          <strong>FN Data</strong>
-        </Menu.Item>
-        <Menu.Menu position="right">
-          <Menu.Item
-            name="dashboard"
-            active={activeItem === "dashboard"}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/"
-          >
-            <Icon name="dashboard" />
-            Upcoming Items
-          </Menu.Item>
-
-          <Menu.Item
-            name="dashboard"
-            active={activeItem === "dashboard"}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/"
-          >
-            <Icon name="dashboard" />
-            Daily Store
-          </Menu.Item>
-
-        
-
-          
-        </Menu.Menu>
-      </Menu>
+     <NavBarCommon leftItems={this.leftMenuItems} rightItems={this.rightItems} />
     );
   }
 }
