@@ -19,8 +19,8 @@ class Navbar extends Component {
           name="dashboard"
           onClick={this.handleItemClick}
         >
-          <Icon name="dolly" />
-          <strong>Trench</strong>
+          <Icon name="gamepad" />
+          <strong>FN Data</strong>
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item
@@ -31,25 +31,23 @@ class Navbar extends Component {
             to="/"
           >
             <Icon name="dashboard" />
-            Dashboard
+            Upcoming Items
           </Menu.Item>
 
           <Menu.Item
-            name="settings"
-            active={activeItem === "settings"}
+            name="dashboard"
+            active={activeItem === "dashboard"}
             onClick={this.handleItemClick}
             as={Link}
-            to="/settings"
-            icon="setting" 
-            content="Settings"
+            to="/"
           >
+            <Icon name="dashboard" />
+            Daily Store
           </Menu.Item>
 
-          <Menu.Item>
-            <Button inverted color="blue">
-              Sign Up
-            </Button>
-          </Menu.Item>
+        
+
+          
         </Menu.Menu>
       </Menu>
     );
