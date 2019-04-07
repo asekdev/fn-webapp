@@ -33,7 +33,8 @@ class CustNavbar extends React.Component {
 
   setActiveTitle = name => {
     this.setState({
-        activeTile: name
+        activeTile: name,
+        isOpen: false
     })
   }
 

@@ -15,11 +15,19 @@ h1, h2, h3, h4, h5, p, a {
   margin-left: 5px;
 }
 
+.padd-top-5 {
+  padding-top: 5px;
+}
+
 .marg-top-5 {
   margin-top: 5px;
 }
 
-.marg-bott-0 {
+.marg-top-10 {
+  margin-top: 10px;
+}
+
+.top-bott-0 {
   margin-bottom: 0px;
 }
 
@@ -28,6 +36,6 @@ h1, h2, h3, h4, h5, p, a {
   bottom: 0;
   width: 100%;
   height: auto;
-  line-height: 60px;
+  /* line-height: 40px; */
   background-color: #2c3e50
 }

@@ -8,12 +8,12 @@ const Footer = () => {
     return (
         <footer className="footer">
             <Container>
-                <Row>
+                <Row className="marg-top-10">
                     <Col xs="12" sm="12" md="6" >
-                        <p className="text-muted text-center marg-bott-0">All rights are to Epic Games. </p>
+                        <p className="text-muted text-center">All rights are to Epic Games. </p>
                     </Col>
                     <Col xs="12" sm="12" md="6">
-                    <p className="text-muted text-center marg-bott-0">
+                    <p className="text-muted text-center">
                         Buy the developer a coffee <FontAwesomeIcon icon={faCoffee} className="marg-left-5" color="#cd6133" />
                     </p>
                     </Col>
