@@ -47,7 +47,7 @@ class CustNavbar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
            <NavItem onClick={() => this.setActiveTitle("player-stats")} active={this.isActive("player-stats")}>
-           <NavLink tag={RRNavLink} to="/store" >
+           <NavLink tag={RRNavLink} to="/" >
                 <FontAwesomeIcon icon={faChartPie} pull="left" color="#3498db" className="padd-right-5 marg-top-5"/>
                 Player Stats
               </NavLink>

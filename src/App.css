@@ -1,9 +1,23 @@
-html,
-body {
+
+html {
   background-color: #34495e !important;
   font-family: "PT Sans", sans-serif;
-  height: 100vh;
-  min-height: 100vh;
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  background-color: #34495e !important;
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 45px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #2c3e50;
 }
 
 h1,
@@ -28,6 +42,10 @@ input {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.footer-space {
+  margin-bottom: 5rem;
 }
 
 .align-middle {
@@ -56,11 +74,3 @@ input {
   margin-bottom: 0px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  /* line-height: 40px; */
-  background-color: #2c3e50;
-}
