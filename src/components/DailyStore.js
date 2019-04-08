@@ -25,14 +25,8 @@ class DailyStore extends Component {
 
     return (
       <Container className="mb-5">
-        <Row>
-          <Col>
-            <h1 className="mt-4 align-left">Daily Store</h1>
-          </Col>
-          <Col>
-            {/* <h3 className="mt-5 text-right">{new Date().getMonth()}</h3> */}
-          </Col>
-        </Row>
+        <h1 className="mt-4 align-left">Daily Store</h1>
+
         {!loaded && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />
