@@ -30,6 +30,12 @@ input {
   background-color: rgb(44, 62, 80) !important;
 }
 
+a:hover {
+  color: #FFFFFF;
+  text-decoration: none !important;
+}
+
+
 .newsAdspace {
   position: absolute;
   top: 5;
@@ -43,6 +49,16 @@ input {
   border: 2px solid white;
   border-radius: 3px;
   font-style: italic;
+}
+
+.zoom {
+  transition: transform 0.3s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px #333);
 }
 
 .cardBody {

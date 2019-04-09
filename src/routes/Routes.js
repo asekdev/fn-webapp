@@ -4,6 +4,7 @@ import DailyStore from "../components/DailyStore";
 import UpcomingItems from '../components/UpcomingItems';
 import Home from "../components/Home";
 import News from '../components/News'
+import Items from '../components/Items'
 
 class Routes extends Component {
   render() {
@@ -13,6 +14,7 @@ class Routes extends Component {
         <Route exact path="/store" component={DailyStore} />
         <Route exact path="/upcoming" component={UpcomingItems} />
         <Route exact path="/news" component={News} />
+        <Route exact path="/items" component={Items} />
       </Switch>
     );
   }

@@ -91,7 +91,7 @@ class CustNavbar extends React.Component {
                 onClick={() => this.setActiveTitle("items")}
                 active={this.isActive("items")}
               >
-                <NavLink tag={RRNavLink} to="/store">
+                <NavLink tag={RRNavLink} to="/items">
                   <FontAwesomeIcon
                     icon={faThLarge}
                     pull="left"
