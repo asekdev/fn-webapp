@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import './App.css';
-import CustNavbar from './components/CustNavbar';
-import Routes from './routes/Routes';
-import { Footer } from './components/common/index';
+import React, { useContext } from "react";
+import "./App.css";
+import CustNavbar from "./components/CustNavbar";
+import Routes from "./routes/Routes";
+import { Footer, Test } from "./components/common/index";
+import { Store } from "./context/Store";
 
-class App extends Component {
-  render() {
-    return (
+const App = props => {
+  const store = useContext(Store);
+
+  return (
     <div>
+      {console.log("Store", store)}
       <CustNavbar />
-      <Routes />
+       <Routes />
       <Footer />
     </div>
-    );
-  }
-}
+  );
+};
 
 export default App;

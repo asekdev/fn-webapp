@@ -1,27 +1,19 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Spinner } from "reactstrap";
-import axios from "axios";
+import { getStoreData } from '../api/api';
 
-class DailyStore extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loaded: false,
-      store: []
-    };
-  }
+const DailyStore = props => {
 
-  async componentDidMount() {
-    let storeItems = await axios.get(
-      "http://localhost:3000/api/upcoming/store"
-    );
-    let storeItemData = storeItems.data.data;
-    console.log(storeItemData);
-    this.setState({ store: storeItemData, loaded: true });
-  }
+  const [loaded, setLoaded] = useState(false);
+  const [storeData, setStoreData] = useState([]);
 
-  render() {
-    let { store, loaded } = this.state;
+  useEffect(() => {
+    getStoreData()
+      .then(res => {
+        setStoreData(res.data.data)
+        setLoaded(true);
+      })
+  }, [])
 
     return (
       <Container className="mb-5">
@@ -33,7 +25,8 @@ class DailyStore extends Component {
           </div>
         )}
         <Row className="footer-space">
-          {store.map(data => {
+          {storeData.map(data => {
+             console.log(storeData)
             return (
               <Col
                 className="mb-3"
@@ -53,7 +46,6 @@ class DailyStore extends Component {
         </Row>
       </Container>
     );
-  }
 }
 
 export default DailyStore;
