@@ -119,7 +119,7 @@ class CustNavbar extends React.Component {
                 onClick={() => this.setActiveTitle("upcoming")}
                 active={this.isActive("upcoming")}
               >
-                <NavLink tag={RRNavLink} to="/store">
+                <NavLink tag={RRNavLink} to="/upcoming">
                   <FontAwesomeIcon
                     icon={faEye}
                     pull="left"
@@ -133,7 +133,7 @@ class CustNavbar extends React.Component {
                 onClick={() => this.setActiveTitle("news")}
                 active={this.isActive("news")}
               >
-                <NavLink tag={RRNavLink} to="/store">
+                <NavLink tag={RRNavLink} to="/news">
                   <FontAwesomeIcon
                     icon={faNewspaper}
                     pull="left"

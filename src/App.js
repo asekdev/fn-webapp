@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./App.css";
 import CustNavbar from "./components/CustNavbar";
 import Routes from "./routes/Routes";
-import { Footer, Test } from "./components/common/index";
+import { Footer } from "./components/common/index";
 import { Store } from "./context/Store";
 
 const App = props => {
@@ -12,7 +12,7 @@ const App = props => {
     <div>
       {console.log("Store", store)}
       <CustNavbar />
-       <Routes />
+      <Routes />
       <Footer />
     </div>
   );

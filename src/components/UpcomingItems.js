@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Spinner, Fade } from "reactstrap";
-import { getStoreData } from "../api/api";
+import { getUpcomingItems } from "../api/api";
 
-const DailyStore = props => {
+const UpcomingItems = props => {
   const [loaded, setLoaded] = useState(false);
   const [storeData, setStoreData] = useState([]);
 
   useEffect(() => {
-    getStoreData().then(res => {
+    getUpcomingItems().then(res => {
       setStoreData(res.data.data);
       setLoaded(true);
     });
@@ -15,7 +15,7 @@ const DailyStore = props => {
 
   return (
     <Container className="mb-5">
-      <h1 className="mt-4 align-left">Daily Store</h1>
+      <h1 className="mt-4 align-left">Upcoming Items</h1>
       {!loaded && (
         <div className="text-center">
           <Spinner size="lg" color="primary" />
@@ -46,4 +46,4 @@ const DailyStore = props => {
   );
 };
 
-export default DailyStore;
+export default UpcomingItems;
