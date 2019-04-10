@@ -9,6 +9,16 @@ import {
   Col
 } from "reactstrap";
 import { UserCard } from "./common";
+import {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+  TwitterIcon,
+  RedditIcon,
+  FacebookIcon,
+  GooglePlusIcon
+} from "react-share";
 
 class Home extends Component {
   constructor(props) {
@@ -17,6 +27,21 @@ class Home extends Component {
 
   render() {
     return (
+      <div>
+        <div className="icon-bar">
+        <FacebookShareButton url="www.google.com">
+          <FacebookIcon />
+        </FacebookShareButton>
+        <RedditShareButton url="www.google.com">
+          <RedditIcon />
+        </RedditShareButton>
+        <TwitterShareButton url="www.google.com">
+          <TwitterIcon />
+        </TwitterShareButton>
+        <GooglePlusShareButton url="www.google.com">
+          <GooglePlusIcon />
+        </GooglePlusShareButton>
+      </div>
       <Container>
         <Row className="align-middle">
           <Col className="mt-5">
@@ -42,6 +67,8 @@ class Home extends Component {
           </Col>
         </Row>
       </Container>
+      </div>
+     
     );
   }
 }

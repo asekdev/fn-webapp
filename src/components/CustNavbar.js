@@ -19,7 +19,6 @@ import {
   faNewspaper
 } from "@fortawesome/free-solid-svg-icons";
 
-
 class CustNavbar extends React.Component {
   constructor(props) {
     super(props);

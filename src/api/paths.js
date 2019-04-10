@@ -26,15 +26,15 @@ const news = baseURL + "/info/news";
 //Server status
 const serverStatus = baseURL + "/info/server-status";
 
-export { 
-    user, 
-    allItems,
-    item,
-    allWeapons, 
-    weapon,
-    store,
-    upcomingItems,
-    challenges,
-    news,
-    serverStatus
-};  
+export {
+  user,
+  allItems,
+  item,
+  allWeapons,
+  weapon,
+  store,
+  upcomingItems,
+  challenges,
+  news,
+  serverStatus
+};
