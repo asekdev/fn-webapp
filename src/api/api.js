@@ -31,9 +31,20 @@ const getSpecificItem = async itemId => {
   return singleItem;
 };
 
-const getAllWeapons = async () => {};
+const getAllWeapons = async () => {
+  let allWeaponData = await axios.get(allWeapons)
+    .catch(err => {
+      throw new Error(err);
+    })
+  // console.log("storeData", storeData )
+  return allWeaponData;
+};
 
-const getWeapon = async weaponId => {};
+const getWeapon = async weaponId => {
+  let weaponData = await axios.get(weapon + weaponId);
+  // console.log("storeData", storeData )
+  return weaponData;
+};
 
 const getStoreData = async () => {
   let storeData = await axios.get(store);

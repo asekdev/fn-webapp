@@ -1,15 +1,15 @@
-const baseURL = "http://localhost:3001/api/";
+const baseURL = "http://localhost:3001/api";
 
 //User
 const user = baseURL + "/users/user/";
 
 //Items
 const allItems = baseURL + "/items/all";
-const item = baseURL + "items/item/";
+const item = baseURL + "/items/item/";
 
 //Weapons
-const allWeapons = baseURL + "items/weapons";
-const weapon = baseURL + "items/weapon/";
+const allWeapons = baseURL + "/items/weapons";
+const weapon = baseURL + "/items/weapon/";
 
 //Store
 const store = baseURL + "/upcoming/store";
@@ -21,7 +21,7 @@ const upcomingItems = baseURL + "/upcoming/items";
 const challenges = baseURL + "/info/challenges/";
 
 //News
-const news = baseURL + "info/news";
+const news = baseURL + "/info/news";
 
 //Server status
 const serverStatus = baseURL + "/info/server-status";

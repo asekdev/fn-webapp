@@ -10,6 +10,40 @@ body {
   font-family: "PT Sans", sans-serif;
 }
 
+.commonbg {
+  background-image: url("./assets/images/backgrounds/commonbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rarebg {
+  background-image: url("./assets/images/backgrounds/rarebg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.epicbg {
+  background-image: url("./assets/images/backgrounds/epicbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.uncommonbg {
+  background-image: url("./assets/images/backgrounds/uncommonbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.legendarybg {
+  background-image: url("./assets/images/backgrounds/legendarybg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weaponImg {
+  width: 65% !important;
+}
+
 h1,
 h2,
 h3,
@@ -31,10 +65,9 @@ input {
 }
 
 a:hover {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none !important;
 }
-
 
 .newsAdspace {
   position: absolute;
@@ -66,7 +99,15 @@ a:hover {
 }
 
 .cardTitle {
+  font-size: 14px;
   color: #ecf0f1 !important;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .min-h-100 {
