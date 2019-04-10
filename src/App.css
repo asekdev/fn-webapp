@@ -94,6 +94,15 @@ a:hover {
   filter: drop-shadow(0 0 10px #333);
 }
 
+.wep-zoom {
+  transition: transform 0.3s;
+}
+
+.wep-zoom:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(0 0 10px #333);
+}
+
 .cardBody {
   color: #bdc3c7 !important;
 }

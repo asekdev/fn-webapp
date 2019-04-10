@@ -26,7 +26,7 @@ const WeaponType = props => {
       </Col>
       {data.map(d => {
         return (
-          <Col className="mb-4 zoom" xl="3" md="6" sm="6" xs="6" key={d.hash}>
+          <Col className="mb-4 wep-zoom" xl="3" md="4" sm="6" xs="6" key={d.hash}>
             <Card className="cardBackground min-h-100">
               <CardHeader className="cardTitle">
                 <strong><h6>{d.name}</h6></strong>
@@ -46,13 +46,13 @@ const WeaponType = props => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xl="6" md="6" sm="6" xs="12">
-                    <h5 className="mb-0">Damage</h5>
-                    <Badge pill color="primary">Headshot: {d.stats.damage.head}</Badge>
+                  <Col className="pl-1" xl="6" md="6" sm="6" xs="12">
+                    <p className="mb-0">Damage</p>
+                    <Badge pill color="light">Headshot: {d.stats.damage.head}</Badge>
                     <Badge pill color="primary">Body: {d.stats.damage.body}</Badge>
                   </Col>
-                  <Col xl="6" md="6" sm="6" xs="12">
-                    <h5 className="mb-0">Magazine</h5>
+                  <Col className="pr-0" xl="6" md="6" sm="6" xs="12">
+                    <p className="mb-0">Magazine</p>
                     <Badge pill color="warning">Reload: {d.stats.magazine.reload}s</Badge>
                     <Badge pill color="warning">Clip: {d.stats.magazine.size}</Badge>
                     {/* <p> </p>
