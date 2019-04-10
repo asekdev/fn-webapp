@@ -6,7 +6,8 @@ import {
   CardImg,
   CardBody,
   CardTitle,
-
+  CardHeader,
+  Badge
 } from "reactstrap";
 
 const WeaponType = props => {
@@ -25,23 +26,38 @@ const WeaponType = props => {
       </Col>
       {data.map(d => {
         return (
-          <Col className="mb-4" xl="3" md="6" sm="6" xs="6" key={d.hash}>
-            <Card className="cardBackground">
+          <Col className="mb-4 zoom" xl="3" md="6" sm="6" xs="6" key={d.hash}>
+            <Card className="cardBackground min-h-100">
+              <CardHeader className="cardTitle">
+                <strong><h6>{d.name}</h6></strong>
+              </CardHeader>
               <div className={`${rarityClass} text-center`}>
-              <CardImg top className="weaponImg" src={d.images.image} alt={d.title} />
+                <CardImg
+                  top
+                  className="weaponImg"
+                  src={d.images.image}
+                  alt={d.title}
+                />
               </div>
-              <CardBody>
-                <CardTitle className="cardTitle">
-                  <strong>{d.name}</strong>
-                </CardTitle>
+              <CardBody className="weapon-card-body">
                 <Row>
-                  <Col xl="5" md="5" sm="5" xs="5">
-                    <p>Stats</p>
+                  <Col xl="12" md="12" sm="12" xs="12" className="text-center weapon-dmg-container">
+                    <Badge pill color="danger" color="danger" className="text-center">{d.stats.dps} DPS</Badge>
                   </Col>
-                  <Col xl="7" md="7" sm="7" xs="7">
-                    <p className="text-right">{d.stats.dps} DPS</p>
+                </Row>
+                <Row>
+                  <Col xl="6" md="6" sm="6" xs="12">
+                    <h5 className="mb-0">Damage</h5>
+                    <Badge pill color="primary">Headshot: {d.stats.damage.head}</Badge>
+                    <Badge pill color="primary">Body: {d.stats.damage.body}</Badge>
                   </Col>
-                  <hr />
+                  <Col xl="6" md="6" sm="6" xs="12">
+                    <h5 className="mb-0">Magazine</h5>
+                    <Badge pill color="warning">Reload: {d.stats.magazine.reload}s</Badge>
+                    <Badge pill color="warning">Clip: {d.stats.magazine.size}</Badge>
+                    {/* <p> </p>
+                    <p></p> */}
+                  </Col>
                 </Row>
               </CardBody>
             </Card>

@@ -9,7 +9,7 @@ import {
   Fade
 } from "reactstrap";
 import CardImg from "reactstrap/lib/CardImg";
-import bundleImage from "../bundle.png";
+import bundleImage from "../assets/images/backgrounds/bundle.png";
 import { Link } from "react-router-dom";
 
 const Items = () => {

@@ -99,8 +99,16 @@ a:hover {
 }
 
 .cardTitle {
-  font-size: 14px;
+  font-size: 16px;
   color: #ecf0f1 !important;
+}
+
+.weapon-card-body {
+  padding: 5px 20px 15px 20px !important;
+}
+
+.weapon-dmg-container {
+  padding-bottom: 10px;
 }
 
 hr {
