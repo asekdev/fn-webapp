@@ -10,6 +10,11 @@ body {
   font-family: "PT Sans", sans-serif;
 }
 
+.navbar-dark .navbar-toggler {
+  border: 0px !important;
+  outline: none !important;
+}
+
 .commonbg {
   background-image: url("./assets/images/backgrounds/commonbg.jpg");
   background-repeat: no-repeat;
