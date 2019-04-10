@@ -11,7 +11,6 @@ import {
   news,
   serverStatus
 } from "./paths";
-import { async } from "q";
 
 const getUserData = async username => {
   let userData = await axios.get(user + username);

@@ -5,7 +5,6 @@ import {
   Card,
   CardImg,
   CardBody,
-  CardTitle,
   CardHeader,
   Badge
 } from "reactstrap";
@@ -42,7 +41,7 @@ const WeaponType = props => {
               <CardBody className="weapon-card-body">
                 <Row>
                   <Col xl="12" md="12" sm="12" xs="12" className="text-center weapon-dmg-container">
-                    <Badge pill color="danger" color="danger" className="text-center">{d.stats.dps} DPS</Badge>
+                    <Badge pill color="danger" className="text-center">{d.stats.dps} DPS</Badge>
                   </Col>
                 </Row>
                 <Row>

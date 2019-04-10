@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Container,
   Input,
@@ -20,12 +20,8 @@ import {
   GooglePlusIcon
 } from "react-share";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Home = () =>  {
 
-  render() {
     return (
       <div>
         <div className="icon-bar">
@@ -70,7 +66,6 @@ class Home extends Component {
       </div>
      
     );
-  }
 }
 
 export default Home;

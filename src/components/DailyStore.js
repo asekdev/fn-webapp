@@ -61,6 +61,7 @@ const DailyStore = props => {
                   <img
                     style={{ width: "100%", objectFit: "cover" }}
                     src={data.item.images.information}
+                    alt={data.item.name}
                   />
                 </Col>
               );
