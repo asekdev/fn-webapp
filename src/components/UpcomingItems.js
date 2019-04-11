@@ -15,12 +15,17 @@ import {
 const UpcomingItems = props => {
   const [loaded, setLoaded] = useState(false);
   const [storeData, setStoreData] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    getUpcomingItems().then(res => {
-      setStoreData(res.data.data);
-      setLoaded(true);
-    });
+    getUpcomingItems()
+      .then(res => {
+        setStoreData(res.data.data);
+        setLoaded(true);
+      })
+      .catch(err => {
+        setError(true);
+      });
   }, []);
 
   return (
@@ -41,9 +46,14 @@ const UpcomingItems = props => {
       </div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left">Upcoming Items</h1>
-        {!loaded && (
+        {!loaded && !error && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />
+          </div>
+        )}
+        {error && (
+          <div className="text-center">
+            <h1>We encourntered an error!</h1>
           </div>
         )}
         <Fade in={loaded}>

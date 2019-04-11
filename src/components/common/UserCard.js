@@ -15,7 +15,7 @@ const UserCard = props => {
         <CardBody>
           <CardTitle>Dbljntd</CardTitle>
           <CardSubtitle>PC</CardSubtitle>
-          <CardLink tag={Link} to={`/user/${props.username}`}>Link to profile</CardLink>
+          <CardLink tag={Link} to={`/stats/${props.username}`}>Link to profile</CardLink>
         </CardBody>
       </Card>
     </div>

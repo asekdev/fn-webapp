@@ -6,6 +6,7 @@ import Home from "../components/Home";
 import News from '../components/News'
 import Items from '../components/Items'
 import Weapons from "../components/Weapons";
+import UserStats from "../components/UserStats";
 
 class Routes extends Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends Component {
         <Route exact path="/upcoming" component={UpcomingItems} />
         <Route exact path="/news" component={News} />
         <Route exact path="/items" component={Items} />
+        <Route exact path="/stats/:user" component={UserStats} />
         <Route exact path="/items/weapons" component={Weapons} />
       </Switch>
     );

@@ -15,6 +15,14 @@ body {
   outline: none !important;
 }
 
+.userstatsbody {
+  background-color: #34495e !important;
+}
+
+.statscard {
+
+}
+
 .commonbg {
   background-image: url("./assets/images/backgrounds/commonbg.jpg");
   background-repeat: no-repeat;
@@ -67,6 +75,15 @@ input {
 
 .cardBackground {
   background-color: rgb(44, 62, 80) !important;
+}
+
+.stats-head {
+  font-weight: 800;
+  font-size: 18px !important;
+}
+
+.card-header-text {
+  color: #fff;
 }
 
 a:hover {
