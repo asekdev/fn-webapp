@@ -12,13 +12,13 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/store" component={DailyStore} />
+        <Route exact path="/" component={DailyStore} />
+        {/* <Route exact path="/store" component={DailyStore} /> */}
         <Route exact path="/upcoming" component={UpcomingItems} />
-        <Route exact path="/news" component={News} />
-        <Route exact path="/items" component={Items} />
+         <Route exact path="/news" component={News} />
+        {/*<Route exact path="/items" component={Items} />
         <Route exact path="/stats/:user" component={UserStats} />
-        <Route exact path="/items/weapons" component={Weapons} />
+        <Route exact path="/items/weapons" component={Weapons} /> */}
       </Switch>
     );
   }

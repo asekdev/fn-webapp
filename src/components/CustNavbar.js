@@ -54,11 +54,11 @@ class CustNavbar extends React.Component {
           expand="lg"
           fixed="true"
         >
-          <NavbarBrand href="/">Fortnite DataHub</NavbarBrand>
+          <NavbarBrand href="/"><span className="fn-text l-grey">FN DataHub</span></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem
+              {/* <NavItem
                 onClick={() => this.setActiveTitle("player-stats")}
                 active={this.isActive("player-stats")}
               >
@@ -71,26 +71,26 @@ class CustNavbar extends React.Component {
                   />
                   Player Stats
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem
                 onClick={() => this.setActiveTitle("store")}
                 active={this.isActive("store")}
               >
-                <NavLink tag={RRNavLink} to="/store">
+                <NavLink tag={RRNavLink} to="/" >
                   <FontAwesomeIcon
                     icon={faShoppingBag}
                     pull="left"
                     color="#e74c3c"
                     className="padd-right-5 marg-top-5"
                   />
-                  Daily Store
+                  <span className="fn-text l-grey">Daily Store</span>
                 </NavLink>
               </NavItem>
-              <NavItem
+              {/* <NavItem
                 onClick={() => this.setActiveTitle("items")}
                 active={this.isActive("items")}
-              >
-                <NavLink tag={RRNavLink} to="/items">
+              > */}
+                {/* <NavLink tag={RRNavLink} to="/items">
                   <FontAwesomeIcon
                     icon={faThLarge}
                     pull="left"
@@ -113,11 +113,11 @@ class CustNavbar extends React.Component {
                   />
                   Challenges
                 </NavLink>
-              </NavItem>
+            </NavItem> */}
               <NavItem
                 onClick={() => this.setActiveTitle("upcoming")}
                 active={this.isActive("upcoming")}
-              >
+              > 
                 <NavLink tag={RRNavLink} to="/upcoming">
                   <FontAwesomeIcon
                     icon={faEye}
@@ -125,7 +125,7 @@ class CustNavbar extends React.Component {
                     color="#bdc3c7"
                     className="padd-right-5 marg-top-5"
                   />
-                  Upcoming Items
+                   <span className="fn-text l-grey">Upcoming Items</span>
                 </NavLink>
               </NavItem>
               <NavItem
@@ -139,7 +139,7 @@ class CustNavbar extends React.Component {
                     color="#f1c40f"
                     className="padd-right-5 marg-top-5"
                   />
-                  News
+                    <span className="fn-text l-grey">News</span>
                 </NavLink>
               </NavItem>
             </Nav>

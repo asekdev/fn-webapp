@@ -40,7 +40,7 @@ const DailyStore = props => {
         </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
-        <h1 className="mt-4 align-left">Daily Store</h1>
+        <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
         {!loaded && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />

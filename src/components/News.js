@@ -51,7 +51,7 @@ const News = () => {
         </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
-        <h1 className="mt-4 align-left">News</h1>
+        <h1 className="mt-4 align-left fn-text l-grey">News</h1>
         {!loaded && (
           <div className="text-center align-middle">
             <Spinner size="lg" color="primary" />
@@ -71,7 +71,7 @@ const News = () => {
                 >
                   <Card className="cardBackground h-100">
                     {data.meta.adSpace !== null && (
-                      <p className="newsAdspace">{data.meta.adSpace}</p>
+                      <p className="newsAdspace fn-text">{data.meta.adSpace}</p>
                     )}
                     <CardImg
                       top

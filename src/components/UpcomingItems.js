@@ -45,7 +45,7 @@ const UpcomingItems = props => {
         </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
-        <h1 className="mt-4 align-left">Upcoming Items</h1>
+        <h1 className="mt-4 align-left fn-text l-grey">Upcoming Items</h1>
         {!loaded && !error && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />
@@ -53,7 +53,7 @@ const UpcomingItems = props => {
         )}
         {error && (
           <div className="text-center">
-            <h1>We encourntered an error!</h1>
+            <h1 className="fn-text l-grey">We encourntered an error!</h1>
           </div>
         )}
         <Fade in={loaded}>

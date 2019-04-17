@@ -1,13 +1,25 @@
 html {
   background-color: #34495e !important;
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
+  font-family: 'Questrial', sans-serif;
+
   position: relative;
   min-height: 100%;
 }
 body {
   /* Margin bottom by footer height */
   background-color: #34495e !important;
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
+  font-family: 'Questrial', sans-serif;
+
+}
+
+.fn-text {
+  font-family: 'Luckiest Guy', cursive !important;
+}
+
+.l-grey {
+  color: gainsboro !important;
 }
 
 .navbar-dark .navbar-toggler {
@@ -17,9 +29,6 @@ body {
 
 .userstatsbody {
   background-color: #34495e !important;
-}
-
-.statscard {
 }
 
 .commonbg {
@@ -65,7 +74,9 @@ p,
 a,
 button,
 input {
-  font-family: "PT Sans", sans-serif !important;
+  /* font-family: "PT Sans", sans-serif !important; */
+  font-family: 'Questrial', sans-serif;
+
   color: white;
 }
 .padd-right-5 {
@@ -97,12 +108,15 @@ a:hover {
   color: white;
   margin-top: 10px;
   margin-right: 10px;
-  padding: 3px 8px;
+  padding: 5px 8px;
+  padding-top: 10px;
   font-weight: 800;
   background-color: #c0392b;
   border: 2px solid white;
-  border-radius: 3px;
+  border-radius: 5px;
   font-style: italic;
+  line-height: 1;
+  font-weight: 100;
 }
 
 .zoom {
