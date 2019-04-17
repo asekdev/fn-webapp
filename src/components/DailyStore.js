@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Fade } from "reactstrap";
+import { Container, Row, Col, Spinner, Fade, Alert, Button } from "reactstrap";
 import { getStoreData } from "../api/api";
 import {
   FacebookShareButton,
@@ -15,6 +15,7 @@ import {
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
   const [storeData, setStoreData] = useState([]);
+  const [showAlert, setShowAlert] = useState(true);
 
   useEffect(() => {
     getStoreData().then(res => {
@@ -41,6 +42,12 @@ const DailyStore = props => {
       </div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
+       <Alert className="mailing-alert">
+       <h4 className="alert-heading">Want daily updates?</h4>
+        <p className="signup-text">
+         <a className="signupbtn" href="/signup">Sign Up</a> to our mailing list and we'll notify you of the new items when the store refreshes.
+        </p>
+       </Alert>
         {!loaded && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />

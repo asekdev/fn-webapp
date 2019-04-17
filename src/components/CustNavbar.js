@@ -58,20 +58,6 @@ class CustNavbar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {/* <NavItem
-                onClick={() => this.setActiveTitle("player-stats")}
-                active={this.isActive("player-stats")}
-              >
-                <NavLink tag={RRNavLink} to="/">
-                  <FontAwesomeIcon
-                    icon={faChartPie}
-                    pull="left"
-                    color="#3498db"
-                    className="padd-right-5 marg-top-5"
-                  />
-                  Player Stats
-                </NavLink>
-              </NavItem> */}
               <NavItem
                 onClick={() => this.setActiveTitle("store")}
                 active={this.isActive("store")}
@@ -81,39 +67,11 @@ class CustNavbar extends React.Component {
                     icon={faShoppingBag}
                     pull="left"
                     color="#e74c3c"
-                    className="padd-right-5 marg-top-5"
+                    className="padd-right-5 icon-style"
                   />
                   <span className="fn-text l-grey">Daily Store</span>
                 </NavLink>
               </NavItem>
-              {/* <NavItem
-                onClick={() => this.setActiveTitle("items")}
-                active={this.isActive("items")}
-              > */}
-                {/* <NavLink tag={RRNavLink} to="/items">
-                  <FontAwesomeIcon
-                    icon={faThLarge}
-                    pull="left"
-                    color="#2ecc71"
-                    className="padd-right-5 marg-top-5"
-                  />
-                  Items
-                </NavLink>
-              </NavItem>
-              <NavItem
-                onClick={() => this.setActiveTitle("challenges")}
-                active={this.isActive("challenges")}
-              >
-                <NavLink tag={RRNavLink} to="/store">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    pull="left"
-                    color="#9b59b6"
-                    className="padd-right-5 marg-top-5"
-                  />
-                  Challenges
-                </NavLink>
-            </NavItem> */}
               <NavItem
                 onClick={() => this.setActiveTitle("upcoming")}
                 active={this.isActive("upcoming")}
@@ -123,7 +81,7 @@ class CustNavbar extends React.Component {
                     icon={faEye}
                     pull="left"
                     color="#bdc3c7"
-                    className="padd-right-5 marg-top-5"
+                    className="padd-right-5 icon-style"
                   />
                    <span className="fn-text l-grey">Upcoming Items</span>
                 </NavLink>
@@ -137,7 +95,7 @@ class CustNavbar extends React.Component {
                     icon={faNewspaper}
                     pull="left"
                     color="#f1c40f"
-                    className="padd-right-5 marg-top-5"
+                    className="padd-right-5 icon-style"
                   />
                     <span className="fn-text l-grey">News</span>
                 </NavLink>
