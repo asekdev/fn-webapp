@@ -14,6 +14,42 @@ body {
 
 }
 
+.marg-5 {
+  margin: 5px !important;
+}
+
+.Score {
+  /* background-color: #000;
+  color: #fff; */
+  padding: 5px;
+  border-radius: 3px;
+  position: inherit;
+}
+.Score--bounce {
+  animation: Score-keyframes--bounce .8s ease-out
+}
+@keyframes Score-keyframes--bounce {
+  0%,
+  to {
+    transform: rotate(0)
+  }
+  10% {
+    transform: scale(1.1)
+  }
+  20% {
+    transform: rotate(4deg) translateY(-12px)
+  }
+  40% {
+    transform: rotate(2deg) translateY(0)
+  }
+  60% {
+    transform: rotate(-2deg) translateY(-8px)
+  }
+  80% {
+    transform: rotate(-1deg) translateY(0)
+  }
+}
+
 .fn-text {
   font-family: 'Luckiest Guy', cursive !important;
   font-weight: 100 !important;
@@ -79,11 +115,16 @@ p,
 a,
 button,
 input, 
-label,
-input[type="email"],
-input[type="text"]  {
+label
+ {
   font-family: 'Questrial', sans-serif;
   color: white;
+}
+
+input[type="email"],
+input[type="text"] {
+  font-family: 'Questrial', sans-serif;
+  color: darkslategray;
 }
 
 .padd-right-5 {
