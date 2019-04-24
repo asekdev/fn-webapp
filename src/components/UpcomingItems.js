@@ -3,13 +3,11 @@ import { Container, Row, Col, Spinner, Fade } from "reactstrap";
 import { getUpcomingItems } from "../api/api";
 import {
   FacebookShareButton,
-  GooglePlusShareButton,
   TwitterShareButton,
   RedditShareButton,
   TwitterIcon,
   RedditIcon,
-  FacebookIcon,
-  GooglePlusIcon
+  FacebookIcon
 } from "react-share";
 
 const UpcomingItems = props => {
@@ -31,18 +29,15 @@ const UpcomingItems = props => {
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com">
+        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite Upcoming items here!">
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com">
+        <RedditShareButton url="www.google.com" title="Check out the current Fornite Upcoming Items!">
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com">
+        <TwitterShareButton url="www.google.com" title="Check out the current Fornite Upcoming Items!" hashtags={['fornite', 'battleroyale', 'items', 'upcoming']}>
           <TwitterIcon />
         </TwitterShareButton>
-        <GooglePlusShareButton url="www.google.com">
-          <GooglePlusIcon />
-        </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Upcoming Items</h1>

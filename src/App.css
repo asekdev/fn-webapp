@@ -1,7 +1,7 @@
 html {
   background-color: #34495e !important;
   /* font-family: "PT Sans", sans-serif; */
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
 
   position: relative;
   min-height: 100%;
@@ -10,12 +10,24 @@ body {
   /* Margin bottom by footer height */
   background-color: #34495e !important;
   /* font-family: "PT Sans", sans-serif; */
-  font-family: 'Questrial', sans-serif;
-
+  font-family: "Questrial", sans-serif;
 }
 
 .marg-5 {
   margin: 5px !important;
+}
+
+.notfound-container {
+  display: grid;
+}
+
+.notfound-element {
+  justify-self: center;
+  align-self: center;
+}
+
+.go-home-btn {
+  color: white;
 }
 
 .Score {
@@ -26,32 +38,32 @@ body {
   position: inherit;
 }
 .Score--bounce {
-  animation: Score-keyframes--bounce .8s ease-out
+  animation: Score-keyframes--bounce 0.8s ease-out;
 }
 @keyframes Score-keyframes--bounce {
   0%,
   to {
-    transform: rotate(0)
+    transform: rotate(0);
   }
   10% {
-    transform: scale(1.1)
+    transform: scale(1.1);
   }
   20% {
-    transform: rotate(4deg) translateY(-12px)
+    transform: rotate(4deg) translateY(-12px);
   }
   40% {
-    transform: rotate(2deg) translateY(0)
+    transform: rotate(2deg) translateY(0);
   }
   60% {
-    transform: rotate(-2deg) translateY(-8px)
+    transform: rotate(-2deg) translateY(-8px);
   }
   80% {
-    transform: rotate(-1deg) translateY(0)
+    transform: rotate(-1deg) translateY(0);
   }
 }
 
 .fn-text {
-  font-family: 'Luckiest Guy', cursive !important;
+  font-family: "Luckiest Guy", cursive !important;
   font-weight: 100 !important;
 }
 
@@ -114,16 +126,15 @@ h5,
 p,
 a,
 button,
-input, 
-label
- {
-  font-family: 'Questrial', sans-serif;
+input,
+label {
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 input[type="email"],
 input[type="text"] {
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: darkslategray;
 }
 

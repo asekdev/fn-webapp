@@ -14,47 +14,53 @@ import {
 import { getNews } from "../api/api";
 import {
   FacebookShareButton,
-  GooglePlusShareButton,
   TwitterShareButton,
   RedditShareButton,
   TwitterIcon,
   RedditIcon,
-  FacebookIcon,
-  GooglePlusIcon
+  FacebookIcon
 } from "react-share";
 
 const News = () => {
   const [loaded, setLoaded] = useState(false);
   const [news, setNews] = useState([]);
+  const [requestError, setRequestError] = useState(false);
 
   useEffect(() => {
-    getNews().then(res => {
-      setNews(res.data.data);
-      setLoaded(true);
-    });
+    getNews()
+      .then(res => {
+        setNews(res.data.data);
+        setLoaded(true);
+      })
+      .catch(err => {
+        setLoaded(true);
+        setRequestError(true);
+      });
   }, []);
 
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com">
+        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite News here!">
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com">
+        <RedditShareButton url="www.google.com" title="Check out the current Fornite News!">
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com">
+        <TwitterShareButton url="www.google.com" title="Check out the current Fornite News!" hashtags={['fornite', 'battleroyale', 'news']}>
           <TwitterIcon />
         </TwitterShareButton>
-        <GooglePlusShareButton url="www.google.com">
-          <GooglePlusIcon />
-        </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">News</h1>
         {!loaded && (
           <div className="text-center align-middle">
             <Spinner size="lg" color="primary" />
+          </div>
+        )}
+        {loaded && requestError && (
+          <div className="text-center">
+            <h1>Yikes. An error has occurred.</h1>
           </div>
         )}
         <Fade in={loaded}>
@@ -66,7 +72,7 @@ const News = () => {
                   xl="4"
                   md="6"
                   sm="6"
-                  xs="6"
+                  xs="12"
                   key={index}
                 >
                   <Card className="cardBackground h-100">

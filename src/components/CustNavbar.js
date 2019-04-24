@@ -12,9 +12,6 @@ import {
 } from "reactstrap";
 import {
   faShoppingBag,
-  faChartPie,
-  faThLarge,
-  faStar,
   faEye,
   faNewspaper
 } from "@fortawesome/free-solid-svg-icons";

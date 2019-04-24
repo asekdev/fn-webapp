@@ -68,6 +68,8 @@ const Signup = props => {
           setConfirmEmailError(true);
         }
         return;
+      default:
+        return; 
     }
   };
 

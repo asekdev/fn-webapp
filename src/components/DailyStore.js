@@ -1,56 +1,66 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Fade, Alert, Button } from "reactstrap";
+import { Container, Row, Col, Spinner, Fade, Alert } from "reactstrap";
 import { getStoreData } from "../api/api";
 import {
   FacebookShareButton,
-  GooglePlusShareButton,
   TwitterShareButton,
   RedditShareButton,
   TwitterIcon,
   RedditIcon,
-  FacebookIcon,
-  GooglePlusIcon
+  FacebookIcon
 } from "react-share";
 
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
   const [storeData, setStoreData] = useState([]);
-  const [showAlert, setShowAlert] = useState(true);
+  const [requestError, setRequestError] = useState(false);
 
   useEffect(() => {
-    getStoreData().then(res => {
-      setStoreData(res.data.data);
-      setLoaded(true);
-    });
+    getStoreData()
+      .then(res => {
+        // throw new Error("error")
+        setStoreData(res.data.data);
+        setLoaded(true);
+      })
+      .catch(err => {
+        setLoaded(true);
+        setRequestError(true);
+      });
   }, []);
 
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com">
+        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite Daily Store here!">
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com">
+        <RedditShareButton url="www.google.com" title="Check out the current Fornite Daily Store!">
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com">
+        <TwitterShareButton url="www.google.com" title="Check out the current Fornite Daily Store!" hashtags={['fornite', 'battleroyale', 'dailystore']}>
           <TwitterIcon />
         </TwitterShareButton>
-        <GooglePlusShareButton url="www.google.com">
-          <GooglePlusIcon />
-        </GooglePlusShareButton>
       </div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
-       <Alert className="mailing-alert">
-       <h4 className="alert-heading">Want daily updates?</h4>
-        <p className="signup-text">
-         <a className="signupbtn" href="/signup">Sign Up</a> to our mailing list and we'll notify you of the new items when the store refreshes.
-        </p>
-       </Alert>
+        {/* <Alert className="mailing-alert">
+          <h4 className="alert-heading">Want daily updates?</h4>
+          <p className="signup-text">
+            <a className="signupbtn" href="/signup">
+              Sign Up
+            </a>{" "}
+            to our mailing list and we'll notify you of the new items when the
+            store refreshes.
+          </p>
+        </Alert> */}
         {!loaded && (
           <div className="text-center">
             <Spinner size="lg" color="primary" />
+          </div>
+        )}
+        {loaded && requestError && (
+          <div className="text-center">
+            <h1>Yikes. An error has occurred.</h1>
           </div>
         )}
         <Fade in={loaded}>
