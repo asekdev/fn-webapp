@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3001/api";
+const baseURL = "https://fn-datahub-backend.appspot.com/api";
 
 //User
 const user = baseURL + "/users/user/";

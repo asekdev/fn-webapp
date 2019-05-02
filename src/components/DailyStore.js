@@ -20,7 +20,7 @@ const DailyStore = props => {
   useEffect(() => {
     getStoreData()
       .then(res => {
-        // throw new Error("error")
+       //throw new Error("error")
         setStoreData(res.data.data);
         setLoaded(true);
       })
@@ -80,15 +80,39 @@ const DailyStore = props => {
           </p>
         </Alert> */}
         {!loaded && (
-          <div className="text-center">
-            <Spinner size="lg" color="primary" />
-          </div>
+           <div className="notfound-container" style={{minHeight: "600px"}}>
+               <div className="notfound-element" >
+                 <Spinner size="lg" color="primary" />
+               </div>
+           </div>
         )}
+
         {loaded && requestError && (
-          <div className="text-center">
-            <h1>Yikes. An error has occurred.</h1>
-          </div>
-        )}
+          <div className="notfound-container" style={{minHeight: "600px"}}>
+          <h1 className="text-center notfound-element">Yikes. An error has occurred.</h1>
+      </div>
+            // <div className="text-center error-div">
+             
+            // </div>
+          )}
+
+
+        {/* {!loaded 
+           <div className="notfound-container" style={{minHeight: "600px"}}>
+           {!loaded && (
+               <div className="notfound-element" >
+                 <Spinner size="lg" color="primary" />
+               </div>
+             )}
+             {loaded && requestError && (
+               // <div className="text-center error-div">
+                 <h1 className="text-center notfound-element">Yikes. An error has occurred.</h1>
+               // </div>
+             )}
+           </div>
+        }} */}
+
+     
         <Fade in={loaded}>
           <Row className="footer-space">
             {storeData.map(data => {
