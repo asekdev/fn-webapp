@@ -9,6 +9,7 @@ import {
   RedditIcon,
   FacebookIcon
 } from "react-share";
+import AdSense from "react-adsense";
 
 const UpcomingItems = props => {
   const [loaded, setLoaded] = useState(false);
@@ -29,17 +30,34 @@ const UpcomingItems = props => {
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite Upcoming items here!">
+        <FacebookShareButton
+          url="www.google.com"
+          quote="Check out the current Fornite Upcoming items here!"
+        >
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com" title="Check out the current Fornite Upcoming Items!">
+        <RedditShareButton
+          url="www.google.com"
+          title="Check out the current Fornite Upcoming Items!"
+        >
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com" title="Check out the current Fornite Upcoming Items!" hashtags={['fornite', 'battleroyale', 'items', 'upcoming']}>
+        <TwitterShareButton
+          url="www.google.com"
+          title="Check out the current Fornite Upcoming Items!"
+          hashtags={["fornite", "battleroyale", "items", "upcoming"]}
+        >
           <TwitterIcon />
         </TwitterShareButton>
       </div>
       <Container className="mb-5">
+        <AdSense.Google
+          client="ca-pub-7186953014182323"
+          slot="7806394673"
+          style={{ display: "block", backgroundColor: "grey", marginTop: 15 }}
+          format="auto"
+          responsive="true"
+        />
         <h1 className="mt-4 align-left fn-text l-grey">Upcoming Items</h1>
         {!loaded && !error && (
           <div className="text-center">
@@ -71,6 +89,19 @@ const UpcomingItems = props => {
                 </Col>
               );
             })}
+            <Container>
+              <AdSense.Google
+                client="ca-pub-7186953014182323"
+                slot="7806394673"
+                style={{
+                  display: "block",
+                  backgroundColor: "grey",
+                  marginTop: 15
+                }}
+                format="auto"
+                responsive="true"
+              />
+            </Container>
           </Row>
         </Fade>
       </Container>

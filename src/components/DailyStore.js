@@ -10,6 +10,8 @@ import {
   FacebookIcon
 } from "react-share";
 
+import AdSense from "react-adsense";
+
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
   const [storeData, setStoreData] = useState([]);
@@ -31,17 +33,41 @@ const DailyStore = props => {
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite Daily Store here!">
+        <FacebookShareButton
+          url="www.google.com"
+          quote="Check out the current Fornite Daily Store here!"
+        >
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com" title="Check out the current Fornite Daily Store!">
+        <RedditShareButton
+          url="www.google.com"
+          title="Check out the current Fornite Daily Store!"
+        >
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com" title="Check out the current Fornite Daily Store!" hashtags={['fornite', 'battleroyale', 'dailystore']}>
+        <TwitterShareButton
+          url="www.google.com"
+          title="Check out the current Fornite Daily Store!"
+          hashtags={["fornite", "battleroyale", "dailystore"]}
+        >
           <TwitterIcon />
         </TwitterShareButton>
       </div>
       <Container className="mb-5">
+        {/* <AdSense.Google
+          client="ca-pub-7186953014182323"
+          slot="7806394673"
+          style={{ width: 500, height: 100, backgroundColor: "grey"}}
+          format=""
+        /> */}
+        <AdSense.Google
+          client="ca-pub-7186953014182323"
+          slot="7806394673"
+          style={{ display: "block", backgroundColor: "grey", marginTop: 15 }}
+          format="auto"
+          responsive="true"
+        />
+        {/* <img src="https://storage.googleapis.com/support-kms-prod/SNP_59D432450939ECC60A21BEDBEE985B1817B1_3094744_en_v2" /> */}
         <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
         {/* <Alert className="mailing-alert">
           <h4 className="alert-heading">Want daily updates?</h4>
@@ -83,6 +109,19 @@ const DailyStore = props => {
                 </Col>
               );
             })}
+            <Container>
+              <AdSense.Google
+                client="ca-pub-7186953014182323"
+                slot="7806394673"
+                style={{
+                  display: "block",
+                  backgroundColor: "grey",
+                  marginTop: 15
+                }}
+                format="auto"
+                responsive="true"
+              />
+            </Container>
           </Row>
         </Fade>
       </Container>

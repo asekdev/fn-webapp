@@ -30,6 +30,13 @@ body {
   color: white;
 }
 
+.paypal-donate {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 0px solid;
+  color: #6c757d !important;
+}
+
 .Score {
   /* background-color: #000;
   color: #fff; */

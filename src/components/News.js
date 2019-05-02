@@ -21,6 +21,8 @@ import {
   FacebookIcon
 } from "react-share";
 
+import AdSense from "react-adsense";
+
 const News = () => {
   const [loaded, setLoaded] = useState(false);
   const [news, setNews] = useState([]);
@@ -41,17 +43,34 @@ const News = () => {
   return (
     <div>
       <div className="icon-bar">
-        <FacebookShareButton url="www.google.com" quote="Check out the current Fornite News here!">
+        <FacebookShareButton
+          url="www.google.com"
+          quote="Check out the current Fornite News here!"
+        >
           <FacebookIcon />
         </FacebookShareButton>
-        <RedditShareButton url="www.google.com" title="Check out the current Fornite News!">
+        <RedditShareButton
+          url="www.google.com"
+          title="Check out the current Fornite News!"
+        >
           <RedditIcon />
         </RedditShareButton>
-        <TwitterShareButton url="www.google.com" title="Check out the current Fornite News!" hashtags={['fornite', 'battleroyale', 'news']}>
+        <TwitterShareButton
+          url="www.google.com"
+          title="Check out the current Fornite News!"
+          hashtags={["fornite", "battleroyale", "news"]}
+        >
           <TwitterIcon />
         </TwitterShareButton>
       </div>
       <Container className="mb-5">
+        <AdSense.Google
+          client="ca-pub-7186953014182323"
+          slot="7806394673"
+          style={{ display: "block", backgroundColor: "grey", marginTop: 15 }}
+          format="auto"
+          responsive="true"
+        />
         <h1 className="mt-4 align-left fn-text l-grey">News</h1>
         {!loaded && (
           <div className="text-center align-middle">
@@ -95,6 +114,19 @@ const News = () => {
                 </Col>
               );
             })}
+            <Container>
+              <AdSense.Google
+                client="ca-pub-7186953014182323"
+                slot="7806394673"
+                style={{
+                  display: "block",
+                  backgroundColor: "grey",
+                  marginTop: 15
+                }}
+                format="auto"
+                responsive="true"
+              />
+            </Container>
           </Row>
         </Fade>
       </Container>

@@ -14,14 +14,26 @@ const Footer = () => {
             </p>
           </Col>
           <Col xs="12" sm="12" md="6">
-            <p className="text-muted text-center">
-              Buy the developer a coffee{" "}
-              <FontAwesomeIcon
-                icon={faCoffee}
-                className="marg-left-5"
-                color="#cd6133"
-              />
-            </p>
+           
+              <form
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                target="_top"
+                className="text-center"
+              >
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="ANHTB6YKME8X2" />
+                <input type="hidden" name="currency_code" value="AUD" />
+                <input type="hidden" name="amount" value="3.5" />
+                <button type="submit" className="paypal-donate">
+                  Buy the developer a coffee{" "}
+                  <FontAwesomeIcon
+                    icon={faCoffee}
+                    className="marg-left-5"
+                    color="#cd6133"
+                  />
+                </button>
+              </form>
           </Col>
         </Row>
       </Container>

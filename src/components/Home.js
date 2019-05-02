@@ -19,12 +19,12 @@ import {
   FacebookIcon,
   GooglePlusIcon
 } from "react-share";
+import AdSense from "react-adsense";
 
-const Home = () =>  {
-
-    return (
-      <div>
-        <div className="icon-bar">
+const Home = () => {
+  return (
+    <div>
+      <div className="icon-bar">
         <FacebookShareButton url="www.google.com">
           <FacebookIcon />
         </FacebookShareButton>
@@ -39,6 +39,13 @@ const Home = () =>  {
         </GooglePlusShareButton>
       </div>
       <Container>
+        <AdSense.Google
+          client="ca-pub-7186953014182323"
+          slot="7806394673"
+          style={{ display: "block" }}
+          format="auto"
+          responsive="true"
+        />
         <Row className="align-middle">
           <Col className="mt-5">
             <h1 className="text-center">Lookup your stats!</h1>
@@ -53,19 +60,18 @@ const Home = () =>  {
         <h1 className="mt-5">Leaderboards</h1>
         <Row>
           <Col>
-          <UserCard username="dbljntd"/>
+            <UserCard username="dbljntd" />
           </Col>
           <Col>
-          <UserCard username="ninja"/>
+            <UserCard username="ninja" />
           </Col>
           <Col>
-          <UserCard username="timthetatman"/>
+            <UserCard username="timthetatman" />
           </Col>
         </Row>
       </Container>
-      </div>
-     
-    );
-}
+    </div>
+  );
+};
 
 export default Home;
