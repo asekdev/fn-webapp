@@ -11,6 +11,7 @@ import {
 } from "react-share";
 
 import AdSense from "react-adsense";
+import Moment from "react-moment";
 
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
@@ -20,7 +21,7 @@ const DailyStore = props => {
   useEffect(() => {
     getStoreData()
       .then(res => {
-       //throw new Error("error")
+        // throw new Error("error")
         setStoreData(res.data.data);
         setLoaded(true);
       })
@@ -28,7 +29,19 @@ const DailyStore = props => {
         setLoaded(true);
         setRequestError(true);
       });
+
+    dateNow();
   }, []);
+
+  const dateNow = () => {
+    let today = new Date();
+    let tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+    tomorrow.setHours(10);
+
+    let hours = Math.abs(today - tomorrow) / 36e5;
+
+    return hours;
+  };
 
   return (
     <div>
@@ -68,7 +81,16 @@ const DailyStore = props => {
           responsive="true"
         />
         {/* <img src="https://storage.googleapis.com/support-kms-prod/SNP_59D432450939ECC60A21BEDBEE985B1817B1_3094744_en_v2" /> */}
-        <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
+        <Row className="align-items-center">
+          <Col>
+            <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
+          </Col>
+          <Col>
+            <h4 className="text-right mb-0">
+              {`${dateNow()} hours remaining`}
+            </h4>
+          </Col>
+        </Row>
         {/* <Alert className="mailing-alert">
           <h4 className="alert-heading">Want daily updates?</h4>
           <p className="signup-text">
@@ -80,22 +102,23 @@ const DailyStore = props => {
           </p>
         </Alert> */}
         {!loaded && (
-           <div className="notfound-container" style={{minHeight: "600px"}}>
-               <div className="notfound-element" >
-                 <Spinner size="lg" color="primary" />
-               </div>
-           </div>
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+            <div className="notfound-element">
+              <Spinner size="lg" color="primary" />
+            </div>
+          </div>
         )}
 
         {loaded && requestError && (
-          <div className="notfound-container" style={{minHeight: "600px"}}>
-          <h1 className="text-center notfound-element">Yikes. An error has occurred.</h1>
-      </div>
-            // <div className="text-center error-div">
-             
-            // </div>
-          )}
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+            <h1 className="text-center notfound-element">
+              Yikes. An error has occurred.
+            </h1>
+          </div>
+          // <div className="text-center error-div">
 
+          // </div>
+        )}
 
         {/* {!loaded 
            <div className="notfound-container" style={{minHeight: "600px"}}>
@@ -112,9 +135,8 @@ const DailyStore = props => {
            </div>
         }} */}
 
-     
         <Fade in={loaded}>
-          <Row className="footer-space">
+          <Row>
             {storeData.map(data => {
               return (
                 <Col
@@ -133,21 +155,21 @@ const DailyStore = props => {
                 </Col>
               );
             })}
-            <Container>
-              <AdSense.Google
-                client="ca-pub-7186953014182323"
-                slot="7806394673"
-                style={{
-                  display: "block",
-                  backgroundColor: "grey",
-                  marginTop: 15
-                }}
-                format="auto"
-                responsive="true"
-              />
-            </Container>
           </Row>
         </Fade>
+        <Container>
+          <AdSense.Google
+            client="ca-pub-7186953014182323"
+            slot="7806394673"
+            style={{
+              display: "block",
+              backgroundColor: "grey",
+              marginTop: 15
+            }}
+            format="auto"
+            responsive="true"
+          />
+        </Container>
       </Container>
     </div>
   );

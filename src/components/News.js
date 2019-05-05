@@ -73,17 +73,25 @@ const News = () => {
         />
         <h1 className="mt-4 align-left fn-text l-grey">News</h1>
         {!loaded && (
-          <div className="text-center align-middle">
-            <Spinner size="lg" color="primary" />
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+            <div className="notfound-element">
+              <Spinner size="lg" color="primary" />
+            </div>
           </div>
         )}
+
         {loaded && requestError && (
-          <div className="text-center">
-            <h1>Yikes. An error has occurred.</h1>
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+            <h1 className="text-center notfound-element">
+              Yikes. An error has occurred.
+            </h1>
           </div>
+          // <div className="text-center error-div">
+
+          // </div>
         )}
         <Fade in={loaded}>
-          <Row className="footer-space">
+          <Row>
             {news.map((data, index) => {
               return (
                 <Col
@@ -114,21 +122,22 @@ const News = () => {
                 </Col>
               );
             })}
-            <Container>
-              <AdSense.Google
-                client="ca-pub-7186953014182323"
-                slot="7806394673"
-                style={{
-                  display: "block",
-                  backgroundColor: "grey",
-                  marginTop: 15
-                }}
-                format="auto"
-                responsive="true"
-              />
-            </Container>
           </Row>
         </Fade>
+        <Container>
+          <AdSense.Google
+            client="ca-pub-7186953014182323"
+            slot="7806394673"
+            style={{
+              display: "block",
+              backgroundColor: "grey",
+              marginTop: 15,
+              marginBottom: 15
+            }}
+            format="auto"
+            responsive="true"
+          />
+        </Container>
       </Container>
     </div>
   );

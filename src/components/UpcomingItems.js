@@ -70,7 +70,7 @@ const UpcomingItems = props => {
           </div>
         )}
         <Fade in={loaded}>
-          <Row className="footer-space">
+          <Row>
             {storeData.map(data => {
               return (
                 <Col
@@ -89,21 +89,31 @@ const UpcomingItems = props => {
                 </Col>
               );
             })}
+          </Row>
+          <Row>
             <Container>
-              <AdSense.Google
-                client="ca-pub-7186953014182323"
-                slot="7806394673"
-                style={{
-                  display: "block",
-                  backgroundColor: "grey",
-                  marginTop: 15
-                }}
-                format="auto"
-                responsive="true"
-              />
+              <Col>
+                <h6 style={{fontWeight: "100"}}>
+                <em>Note: These items <strong>may</strong> appear in the item shop - others could
+                  be rewarded for upcoming challenges.</em>
+                </h6>
+              </Col>
             </Container>
           </Row>
         </Fade>
+        <Container>
+          <AdSense.Google
+            client="ca-pub-7186953014182323"
+            slot="7806394673"
+            style={{
+              display: "block",
+              backgroundColor: "grey",
+              marginTop: 15
+            }}
+            format="auto"
+            responsive="true"
+          />
+        </Container>
       </Container>
     </div>
   );
