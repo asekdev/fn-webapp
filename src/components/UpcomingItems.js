@@ -23,6 +23,7 @@ const UpcomingItems = props => {
         setLoaded(true);
       })
       .catch(err => {
+        setLoaded(true);
         setError(true);
       });
   }, []);
@@ -64,11 +65,21 @@ const UpcomingItems = props => {
             <Spinner size="lg" color="primary" />
           </div>
         )}
-        {error && (
+         {loaded && error && (
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+            <h1 className="text-center notfound-element">
+              Yikes. An error has occurred.
+            </h1>
+            <h4 className="text-center notfound-element mt-3">
+              Try refresh the page. If that doesn't work, try again soon.
+            </h4>
+          </div>
+        )}
+        {/* {error && (
           <div className="text-center">
             <h1 className="fn-text l-grey">We encourntered an error!</h1>
           </div>
-        )}
+        )} */}
         <Fade in={loaded}>
           <Row>
             {storeData.map(data => {

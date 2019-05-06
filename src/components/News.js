@@ -85,6 +85,9 @@ const News = () => {
             <h1 className="text-center notfound-element">
               Yikes. An error has occurred.
             </h1>
+            <h4 className="text-center notfound-element mt-3">
+              Try refresh the page. If that doesn't work, try again soon.
+            </h4>
           </div>
           // <div className="text-center error-div">
 

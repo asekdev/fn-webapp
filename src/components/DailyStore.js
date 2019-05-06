@@ -11,7 +11,6 @@ import {
 } from "react-share";
 
 import AdSense from "react-adsense";
-import Moment from "react-moment";
 
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
@@ -29,17 +28,24 @@ const DailyStore = props => {
         setLoaded(true);
         setRequestError(true);
       });
-
-    dateNow();
+      dateNow();
   }, []);
 
   const dateNow = () => {
     let today = new Date();
-    let tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
-    tomorrow.setHours(10);
+    today.setHours(10)
+    let refresh;
+    let hours;
 
-    let hours = Math.abs(today - tomorrow) / 36e5;
-
+    if(today.getHours() > 0 && today.getHours() < 10) {
+      refresh = new Date();
+      refresh.setHours(10);
+      hours = refresh.getHours() - today.getHours();
+    } else {
+      refresh = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+      refresh.setHours(10);
+      hours = Math.abs(today - refresh) / 36e5;
+    }
     return hours;
   };
 
@@ -114,6 +120,9 @@ const DailyStore = props => {
             <h1 className="text-center notfound-element">
               Yikes. An error has occurred.
             </h1>
+            <h4 className="text-center notfound-element mt-3">
+              Try refresh the page. If that doesn't work, try again soon.
+            </h4>
           </div>
           // <div className="text-center error-div">
 
