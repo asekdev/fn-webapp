@@ -7,7 +7,7 @@ import News from "../components/News";
 // import Items from "../components/Items";
 // import Weapons from "../components/Weapons";
 // import UserStats from "../components/UserStats";
-import Signup from "../components/Signup";
+// import Signup from "../components/Signup";
 import NotFound from "../components/NotFound";
 
 class Routes extends Component {

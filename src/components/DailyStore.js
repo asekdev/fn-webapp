@@ -28,7 +28,7 @@ const DailyStore = props => {
         setLoaded(true);
         setRequestError(true);
       });
-      dateNow();
+    dateNow();
   }, []);
 
   const dateNow = () => {
@@ -36,20 +36,16 @@ const DailyStore = props => {
     let refresh;
     let hours;
 
-    if(today.getHours() > 0 && today.getHours() < 10) {
+    if (today.getHours() > 0 && today.getHours() < 10) {
       refresh = new Date();
       refresh.setHours(10);
       hours = refresh.getHours() - today.getHours();
     } else {
-      refresh = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+      refresh = new Date(today.getTime() + 24 * 60 * 60 * 1000);
       refresh.setHours(10);
       hours = Math.abs(today - refresh) / 36e5;
     }
 
-    console.log("today", today.getHours())
-    console.log("refresh", refresh.getHours())
-
-    console.log("hours", hours)
     return hours;
   };
 
