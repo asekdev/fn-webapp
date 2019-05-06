@@ -35,6 +35,7 @@ body {
   background-color: transparent;
   border: 0px solid;
   color: #6c757d !important;
+  font-family: "Questrial", sans-serif;
 }
 
 .Score {
@@ -80,6 +81,10 @@ body {
 
 .navbar-dark .navbar-toggler {
   border: 0px !important;
+  outline: none !important;
+}
+
+a {
   outline: none !important;
 }
 

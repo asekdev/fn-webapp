@@ -33,7 +33,6 @@ const DailyStore = props => {
 
   const dateNow = () => {
     let today = new Date();
-    today.setHours(10)
     let refresh;
     let hours;
 
@@ -46,6 +45,11 @@ const DailyStore = props => {
       refresh.setHours(10);
       hours = Math.abs(today - refresh) / 36e5;
     }
+
+    console.log("today", today.getHours())
+    console.log("refresh", refresh.getHours())
+
+    console.log("hours", hours)
     return hours;
   };
 
