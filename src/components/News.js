@@ -44,20 +44,20 @@ const News = () => {
     <div>
       <div className="icon-bar">
         <FacebookShareButton
-          url="www.google.com"
+         url="www.fndatahub.com/news"
           quote="Check out the current Fornite News here!"
         >
           <FacebookIcon />
         </FacebookShareButton>
         <RedditShareButton
-          url="www.google.com"
+         url="www.fndatahub.com/news"
           title="Check out the current Fornite News!"
         >
           <RedditIcon />
         </RedditShareButton>
         <TwitterShareButton
-          url="www.google.com"
-          title="Check out the current Fornite News!"
+        url="www.fndatahub.com/news"
+          title="Check out the current Fornite News! www.fndatahub.com/news"
           hashtags={["fornite", "battleroyale", "news"]}
         >
           <TwitterIcon />

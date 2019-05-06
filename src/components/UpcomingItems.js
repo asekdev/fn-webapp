@@ -32,20 +32,20 @@ const UpcomingItems = props => {
     <div>
       <div className="icon-bar">
         <FacebookShareButton
-          url="www.google.com"
+        url="www.fndatahub.com/upcoming"
           quote="Check out the current Fornite Upcoming items here!"
         >
           <FacebookIcon />
         </FacebookShareButton>
         <RedditShareButton
-          url="www.google.com"
+       url="www.fndatahub.com/upcoming"
           title="Check out the current Fornite Upcoming Items!"
         >
           <RedditIcon />
         </RedditShareButton>
         <TwitterShareButton
-          url="www.google.com"
-          title="Check out the current Fornite Upcoming Items!"
+        url="www.fndatahub.com/upcoming"
+          title="Check out the current Fornite Upcoming Items! www.fndatahub.com/upcoming"
           hashtags={["fornite", "battleroyale", "items", "upcoming"]}
         >
           <TwitterIcon />

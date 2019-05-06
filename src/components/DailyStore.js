@@ -53,20 +53,20 @@ const DailyStore = props => {
     <div>
       <div className="icon-bar">
         <FacebookShareButton
-          url="www.google.com"
+          url="www.fndatahub.com"
           quote="Check out the current Fornite Daily Store here!"
         >
           <FacebookIcon />
         </FacebookShareButton>
         <RedditShareButton
-          url="www.google.com"
-          title="Check out the current Fornite Daily Store!"
+         url="www.fndatahub.com"
+          title="Check out the current Fornite Daily Store! "
         >
           <RedditIcon />
         </RedditShareButton>
         <TwitterShareButton
-          url="www.google.com"
-          title="Check out the current Fornite Daily Store!"
+           url="www.fndatahub.com"
+          title="Check out the current Fornite Daily Store! www.fndatahub.com"
           hashtags={["fornite", "battleroyale", "dailystore"]}
         >
           <TwitterIcon />
