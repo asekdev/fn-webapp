@@ -8,9 +8,13 @@ import {
   FormGroup,
   FormFeedback,
   Input,
-  Label
+  Label,
+  Alert,
+  Fade
 } from "reactstrap";
 import { sendEmail } from "../api/api";
+import { faCheckCircle, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AnimateOnChange from "react-animate-on-change";
 
 const Contact = props => {
@@ -18,6 +22,7 @@ const Contact = props => {
   const [body, setBody] = useState("");
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirEmail] = useState("");
+  const [mailOutcome, setMailOutcome] = useState(null);
 
   const [emailError, setEmailError] = useState(null);
   const [confirmEmailError, setConfirmEmailError] = useState(null);
@@ -70,24 +75,29 @@ const Contact = props => {
   };
 
   const submit = () => {
-
     let data = {
-        email: email,
-        subject: subject,
-        body: body
-    }
-
-    console.log(data);
-
-      sendEmail(data)
-        .then(res => {
-            if(res.status === 200) {
-                console.log("Woo it worked")
-            }
-        })
-        .catch(err => {
-            console.log("fuck there was an error.")
-        })
+      email: email,
+      subject: subject,
+      body: body
+    };
+    
+    sendEmail(data)
+      .then(res => {
+        if (res.status === 200) {
+          resetForm();
+          setMailOutcome(true);
+          setTimeout(() => {
+            setMailOutcome(null);
+          }, 4000);
+        }
+      })
+      .catch(err => {
+        resetForm();
+        setMailOutcome(false);
+        setTimeout(() => {
+          setMailOutcome(null);
+        }, 4000);
+      });
   };
 
   return (
@@ -98,6 +108,24 @@ const Contact = props => {
           Have feedback? Want to tell us how we can improve?
         </h5>
         <h5>Fill out the form and well take note of your feedback!</h5>
+        {mailOutcome && mailOutcome !== null && (
+          <Fade>
+            <Alert color="success"> <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="marg-left-5"
+                  color="#155724"
+                /> Success! Your mail has been sent.</Alert>
+          </Fade>
+        )} 
+        {!mailOutcome && mailOutcome !== null && (
+          <Fade>
+            <Alert color="danger"> <FontAwesomeIcon
+                  icon={faExclamationCircle}
+                  className="marg-left-5"
+                  color="#721c24"
+                /> Email failed! An error has occurred.</Alert>
+          </Fade>
+        )} 
         <Row className="footer-space">
           <Col lg={{ size: 6, offset: 3 }}>
             <Form>
@@ -144,7 +172,6 @@ const Contact = props => {
                   type="textarea"
                   name="body"
                   id="exampleEmail"
-               
                   onChange={validate}
                   value={body}
                 />

@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   Row,
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  FormFeedback,
-  Input,
-  Label
+  Col
 } from "reactstrap";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dab from "../assets/images/dab.png";
-import Rocket from "../assets/images/rocket.png";
 
 const About = props => {
   return (
@@ -33,7 +26,7 @@ const About = props => {
                 log into the game everyday to see the daily store.
               </h5>
               <h5 className="mt-4">
-                Additonally, we display the upcoming items that may appear
+                Additonally, you an find the upcoming items that may appear
                 either in the item shop - or can be obtained by completing
                 challenges.
               </h5>
@@ -49,7 +42,7 @@ const About = props => {
                   <input type="hidden" name="amount" value="3.5" />
                   <span>You could always</span>
                   <button type="submit" className="about-donate">
-                    buy me a coffee{" "}
+                    buy me a coffee
                     <FontAwesomeIcon
                       icon={faCoffee}
                       className="marg-left-5"
@@ -59,7 +52,7 @@ const About = props => {
                   <span>and help keep the website up and running.</span>
                 </form>
               </h5>
-              <h5 className="mt-4">I hope you enjoy the site!</h5>
+              <h5 className="mt-4">Enjoy the site!</h5>
               <h3 className="mt-4">- Andy</h3>
             </Col>
             <Col
