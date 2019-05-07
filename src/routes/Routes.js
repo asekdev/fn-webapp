@@ -11,6 +11,7 @@ import News from "../components/News";
 import NotFound from "../components/NotFound";
 import Contact from "../components/Contact";
 import About from "../components/About";
+import Privacy from "../components/Privacy";
 
 class Routes extends Component {
   render() {
@@ -21,6 +22,7 @@ class Routes extends Component {
         <Route exact path="/news" component={News} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/privacy" component={Privacy} />
         <Route component={NotFound} />
       </Switch>
     );

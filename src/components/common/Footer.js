@@ -25,7 +25,7 @@ const Footer = () => {
               </a>
             </p>
             <p className="text-muted text-center">
-              All rights are to Epic Games.
+              All rights are to Epic Games. &trade;
             </p>
           </Col>
           <Col xs="12" sm="12" md="6">
@@ -40,7 +40,7 @@ const Footer = () => {
               <input type="hidden" name="currency_code" value="AUD" />
               <input type="hidden" name="amount" value="3.5" />
               <button type="submit" className="paypal-donate">
-                Buy the developer a coffee{" "}
+                Buy the developer a coffee
                 <FontAwesomeIcon
                   icon={faCoffee}
                   className="marg-left-5"

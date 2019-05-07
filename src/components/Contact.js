@@ -83,10 +83,10 @@ const Contact = props => {
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Contact</h1>
         <h5 className="align-left l-grey">
-        Have feedback? Want to tell us how we can improve? Fill out the form
-        and well take note of your feedback!
+        Have feedback? Want to tell us how we can improve? 
         </h5>
-        <hr />
+        <h5>Fill out the form
+        and well take note of your feedback!</h5>
         <Row className="footer-space">
           <Col lg={{ size: 6, offset: 3 }}>
             <Form>

@@ -321,6 +321,16 @@ hr {
   margin-bottom: 0px;
 }
 
+.policy-text {
+  line-height: 2;
+  color: #a5b1c2
+}
+
+.policy-header {
+  font-weight: bold;
+
+}
+
 /* // Medium devices (tablets, less than 992px) */
 @media only screen and (max-width: 991.98px) {
   .footer {
