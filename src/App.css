@@ -38,6 +38,15 @@ body {
   font-family: "Questrial", sans-serif;
 }
 
+.about-donate {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 0px solid;
+  color: #fff !important;
+  font-family: "Questrial", sans-serif;
+  text-decoration: underline;
+}
+
 .Score {
   /* background-color: #000;
   color: #fff; */

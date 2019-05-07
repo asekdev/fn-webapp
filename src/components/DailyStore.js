@@ -44,12 +44,12 @@ const DailyStore = props => {
       refresh.setHours(10);
       hours = Math.abs(today - refresh) / 36e5;
     }
-    
-    if(hours === 1) {
-      return hours + " hour remaining"
+
+    if (hours === 1) {
+      return hours + " hour remaining";
     }
 
-    return hours + " hours remaining"
+    return hours + " hours remaining";
   };
 
   return (
@@ -81,9 +81,7 @@ const DailyStore = props => {
             <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
           </Col>
           <Col>
-            <h4 className="text-right mb-0">
-              {`${dateNow()}`}
-            </h4>
+            <h4 className="text-right mb-0">{`${dateNow()}`}</h4>
           </Col>
         </Row>
         {/* <Alert className="mailing-alert">

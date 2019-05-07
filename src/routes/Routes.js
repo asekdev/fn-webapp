@@ -9,6 +9,8 @@ import News from "../components/News";
 // import UserStats from "../components/UserStats";
 // import Signup from "../components/Signup";
 import NotFound from "../components/NotFound";
+import Contact from "../components/Contact";
+import About from "../components/About";
 
 class Routes extends Component {
   render() {
@@ -17,7 +19,8 @@ class Routes extends Component {
         <Route exact path="/" component={DailyStore} />
         <Route exact path="/upcoming" component={UpcomingItems} />
         <Route exact path="/news" component={News} />
-        {/* <Route exact path="/signup" component={Signup} /> */}
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/about" component={About} />
         <Route component={NotFound} />
       </Switch>
     );

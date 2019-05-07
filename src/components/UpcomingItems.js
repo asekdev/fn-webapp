@@ -31,19 +31,19 @@ const UpcomingItems = props => {
     <div>
       <div className="icon-bar">
         <FacebookShareButton
-        url="www.fndatahub.com/upcoming"
+          url="www.fndatahub.com/upcoming"
           quote="Check out the current Fornite Upcoming items here!"
         >
           <FacebookIcon />
         </FacebookShareButton>
         <RedditShareButton
-       url="www.fndatahub.com/upcoming"
+          url="www.fndatahub.com/upcoming"
           title="Check out the current Fornite Upcoming Items!"
         >
           <RedditIcon />
         </RedditShareButton>
         <TwitterShareButton
-        url="www.fndatahub.com/upcoming"
+          url="www.fndatahub.com/upcoming"
           title="Check out the current Fornite Upcoming Items! www.fndatahub.com/upcoming"
           hashtags={["fornite", "battleroyale", "items", "upcoming"]}
         >
@@ -57,7 +57,7 @@ const UpcomingItems = props => {
             <Spinner size="lg" color="primary" />
           </div>
         )}
-         {loaded && error && (
+        {loaded && error && (
           <div className="notfound-container" style={{ minHeight: "600px" }}>
             <h1 className="text-center notfound-element">
               Yikes. An error has occurred.
@@ -96,9 +96,11 @@ const UpcomingItems = props => {
           <Row>
             <Container>
               <Col>
-                <h6 style={{fontWeight: "100"}}>
-                <em>Note: These items <strong>may</strong> appear in the item shop - others could
-                  be rewarded for upcoming challenges.</em>
+                <h6 style={{ fontWeight: "100" }}>
+                  <em>
+                    Note: These items <strong>may</strong> appear in the item
+                    shop - others could be rewarded for upcoming challenges.
+                  </em>
                 </h6>
               </Col>
             </Container>

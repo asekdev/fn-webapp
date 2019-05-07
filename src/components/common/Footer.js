@@ -9,41 +9,45 @@ const Footer = () => {
       <Container>
         <Row className="marg-top-10">
           <Col xs="12" sm="12" md="6">
-         
             <p className="text-muted text-center">
-             About
+              <a href="/about" className="text-muted">
+                About
+              </a>
             </p>
             <p className="text-muted text-center">
-              Privacy
+              <a href="/privacy" className="text-muted">
+                Privacy
+              </a>
             </p>
             <p className="text-muted text-center">
-             Contact
+              <a href="/contact" className="text-muted">
+                Contact
+              </a>
             </p>
             <p className="text-muted text-center">
-              All rights are to Epic Games.{" "}
+              All rights are to Epic Games.
             </p>
           </Col>
           <Col xs="12" sm="12" md="6">
-           
-              <form
-                action="https://www.paypal.com/cgi-bin/webscr"
-                method="post"
-                target="_top"
-                className="text-center"
-              >
-                <input type="hidden" name="cmd" value="_donations" />
-                <input type="hidden" name="business" value="ANHTB6YKME8X2" />
-                <input type="hidden" name="currency_code" value="AUD" />
-                <input type="hidden" name="amount" value="3.5" />
-                <button type="submit" className="paypal-donate">
-                  Buy the developer a coffee{" "}
-                  <FontAwesomeIcon
-                    icon={faCoffee}
-                    className="marg-left-5"
-                    color="#cd6133"
-                  />
-                </button>
-              </form>
+            <form
+              action="https://www.paypal.com/cgi-bin/webscr"
+              method="post"
+              target="_top"
+              className="text-center"
+            >
+              <input type="hidden" name="cmd" value="_donations" />
+              <input type="hidden" name="business" value="ANHTB6YKME8X2" />
+              <input type="hidden" name="currency_code" value="AUD" />
+              <input type="hidden" name="amount" value="3.5" />
+              <button type="submit" className="paypal-donate">
+                Buy the developer a coffee{" "}
+                <FontAwesomeIcon
+                  icon={faCoffee}
+                  className="marg-left-5"
+                  color="#cd6133"
+                />
+              </button>
+            </form>
           </Col>
         </Row>
       </Container>
