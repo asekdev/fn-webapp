@@ -10,6 +10,7 @@ import {
   Input,
   Label
 } from "reactstrap";
+import { sendEmail } from "../api/api";
 import AnimateOnChange from "react-animate-on-change";
 
 const Contact = props => {
@@ -69,10 +70,24 @@ const Contact = props => {
   };
 
   const submit = () => {
-      console.log("body = ", body);
-      console.log("subject = ", subject);
-      console.log("email = ", email);
-      console.log("confirm email = ", confirmEmail);
+
+    let data = {
+        email: email,
+        subject: subject,
+        body: body
+    }
+
+    console.log(data);
+
+      sendEmail(data)
+        .then(res => {
+            if(res.status === 200) {
+                console.log("Woo it worked")
+            }
+        })
+        .catch(err => {
+            console.log("fuck there was an error.")
+        })
   };
 
   return (

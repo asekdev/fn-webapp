@@ -92,5 +92,6 @@ export {
   getUpcomingItems,
   getChallanges,
   getNews,
-  getServerStatus
+  getServerStatus,
+  sendEmail
 };

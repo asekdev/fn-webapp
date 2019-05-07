@@ -155,9 +155,11 @@ label {
 }
 
 input[type="email"],
-input[type="text"] {
-  font-family: "Questrial", sans-serif;
-  color: darkslategray;
+input[type="text"],
+input[type="textarea"],
+textarea {
+  font-family: "Questrial", sans-serif !important;
+  color: darkslategray !important;
 }
 
 .padd-right-5 {

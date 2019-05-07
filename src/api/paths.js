@@ -27,7 +27,7 @@ const news = baseURL + "/info/news";
 const serverStatus = baseURL + "/info/server-status";
 
 //Feedback Email
-const feedbackEndpoint = "/contact/email";
+const feedbackEndpoint = "http://localhost:8080/api/contact/email";
 
 export {
   user,
