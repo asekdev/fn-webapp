@@ -14,11 +14,10 @@ import AnimateOnChange from "react-animate-on-change";
 
 const Contact = props => {
   const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirEmail] = useState("");
 
-  const [firstNameError, setFirstNameError] = useState(null);
-  const [lastNameError, setLastNameError] = useState(null);
   const [emailError, setEmailError] = useState(null);
   const [confirmEmailError, setConfirmEmailError] = useState(null);
 
@@ -26,6 +25,12 @@ const Contact = props => {
     const name = e.target.name;
     const value = e.target.value;
     switch (name) {
+      case "subject":
+        setSubject(value);
+        return;
+      case "body":
+        setBody(value);
+        return;
       case "email":
         let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         console.log(emailRegex.test(value));
@@ -46,51 +51,41 @@ const Contact = props => {
         }
         return;
       default:
-        return; 
+        return;
     }
   };
 
   const isValid = () => {
-    return (
-      firstNameError === false &&
-      lastNameError === false &&
-      emailError === false &&
-      confirmEmailError === false
-    );
+    return emailError === false && confirmEmailError === false;
   };
 
   const resetForm = () => {
-    //   setFirstname("")
-    //   setLastname("");
-      setEmail("");
-      setConfirEmail("");
-
-      setFirstNameError(null);
-      setLastNameError(null);
-      setEmailError(null);
-      setConfirmEmailError(null);
-  }
+    setBody("");
+    setSubject("");
+    setEmail("");
+    setConfirEmail("");
+    setEmailError(null);
+    setConfirmEmailError(null);
+  };
 
   const submit = () => {
-    //   console.log("firstname = ", firstname);
-    //   console.log("lastname = ", lastname);
-    //   console.log("email = ", email);
-    //   console.log("confirm email = ", confirmEmail);
-  }
+      console.log("body = ", body);
+      console.log("subject = ", subject);
+      console.log("email = ", email);
+      console.log("confirm email = ", confirmEmail);
+  };
 
   return (
     <div>
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Contact</h1>
         <h5 className="align-left l-grey">
-        Have feedback? Want to tell us how we can improve? 
+          Have feedback? Want to tell us how we can improve?
         </h5>
-        <h5>Fill out the form
-        and well take note of your feedback!</h5>
+        <h5>Fill out the form and well take note of your feedback!</h5>
         <Row className="footer-space">
           <Col lg={{ size: 6, offset: 3 }}>
             <Form>
-             
               <FormGroup>
                 <Label>Email</Label>
                 <Input
@@ -102,7 +97,7 @@ const Contact = props => {
                   onChange={validate}
                   value={email}
                 />
-                  <FormFeedback>Invaid email.</FormFeedback>
+                <FormFeedback>Invaid email.</FormFeedback>
               </FormGroup>
               <FormGroup>
                 <Label for="exampleEmail">Confirm Email</Label>
@@ -116,53 +111,46 @@ const Contact = props => {
                   onChange={validate}
                   value={confirmEmail}
                 />
-                 <FormFeedback>Emails don't match.</FormFeedback>
+                <FormFeedback>Emails don't match.</FormFeedback>
               </FormGroup>
               <FormGroup>
                 <Label for="exampleEmail">Subject</Label>
                 <Input
                   type="text"
-                  name="firstname"
+                  name="subject"
                   id="exampleEmail"
-                  valid={firstNameError !== null && !firstNameError}
                   onChange={validate}
-                //   value={firstname}
+                  value={subject}
                 />
               </FormGroup>
               <FormGroup>
                 <Label>Body</Label>
                 <Input
                   type="textarea"
-                  name="lastname"
+                  name="body"
                   id="exampleEmail"
-                  valid={lastNameError !== null && !lastNameError}
-                  invalid={lastNameError}
+               
                   onChange={validate}
-                //   value={lastname}
+                  value={body}
                 />
               </FormGroup>
-              
             </Form>
             <AnimateOnChange
-                baseClassName="Score float-right"
-                animationClassName="Score--bounce"
-                animate={isValid()}
-              >
-               <Button
-                color="primary"
-                disabled={!isValid()}
-                onClick={submit}
-              >
+              baseClassName="Score float-right"
+              animationClassName="Score--bounce"
+              animate={isValid()}
+            >
+              <Button color="primary" disabled={!isValid()} onClick={submit}>
                 Submit
               </Button>
-              </AnimateOnChange>
-              <Button
-                className="marg-5 float-right"
-                color="danger"
-                onClick={resetForm}
-              >
-                Reset Fields
-              </Button>
+            </AnimateOnChange>
+            <Button
+              className="marg-5 float-right"
+              color="danger"
+              onClick={resetForm}
+            >
+              Reset Fields
+            </Button>
           </Col>
         </Row>
       </Container>

@@ -9,7 +9,8 @@ import {
   upcomingItems,
   challenges,
   news,
-  serverStatus
+  serverStatus,
+  feedbackEndpoint
 } from "./paths";
 
 const getUserData = async username => {
@@ -74,6 +75,12 @@ const getServerStatus = async () => {
   // console.log("storeData", upcomingItems)
   return serverStatusData;
 };
+
+const sendEmail = async emailData => {
+  let emailFeedback = await axios.post(feedbackEndpoint, emailData);
+
+  return emailFeedback;
+}
 
 export {
   getUserData,

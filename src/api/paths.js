@@ -26,6 +26,9 @@ const news = baseURL + "/info/news";
 //Server status
 const serverStatus = baseURL + "/info/server-status";
 
+//Feedback Email
+const feedbackEndpoint = "/contact/email";
+
 export {
   user,
   allItems,
@@ -36,5 +39,6 @@ export {
   upcomingItems,
   challenges,
   news,
-  serverStatus
+  serverStatus,
+  feedbackEndpoint
 };
