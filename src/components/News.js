@@ -21,8 +21,6 @@ import {
   FacebookIcon
 } from "react-share";
 
-import AdSense from "react-adsense";
-
 const News = () => {
   const [loaded, setLoaded] = useState(false);
   const [news, setNews] = useState([]);
@@ -64,13 +62,6 @@ const News = () => {
         </TwitterShareButton>
       </div>
       <Container className="mb-5">
-        <AdSense.Google
-          client="ca-pub-7186953014182323"
-          slot="7806394673"
-          style={{ display: "block", backgroundColor: "grey", marginTop: 15 }}
-          format="auto"
-          responsive="true"
-        />
         <h1 className="mt-4 align-left fn-text l-grey">News</h1>
         {!loaded && (
           <div className="notfound-container" style={{ minHeight: "600px" }}>
@@ -127,20 +118,6 @@ const News = () => {
             })}
           </Row>
         </Fade>
-        <Container>
-          <AdSense.Google
-            client="ca-pub-7186953014182323"
-            slot="7806394673"
-            style={{
-              display: "block",
-              backgroundColor: "grey",
-              marginTop: 15,
-              marginBottom: 15
-            }}
-            format="auto"
-            responsive="true"
-          />
-        </Container>
       </Container>
     </div>
   );

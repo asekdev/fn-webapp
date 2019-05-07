@@ -9,6 +9,16 @@ const Footer = () => {
       <Container>
         <Row className="marg-top-10">
           <Col xs="12" sm="12" md="6">
+         
+            <p className="text-muted text-center">
+             About
+            </p>
+            <p className="text-muted text-center">
+              Privacy
+            </p>
+            <p className="text-muted text-center">
+             Contact
+            </p>
             <p className="text-muted text-center">
               All rights are to Epic Games.{" "}
             </p>

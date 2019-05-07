@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Spinner, Fade, Alert } from "reactstrap";
+import { Container, Row, Col, Spinner, Fade } from "reactstrap";
+// import { Alert } from "reactstrap";
 import { getStoreData } from "../api/api";
 import {
   FacebookShareButton,
@@ -9,8 +10,6 @@ import {
   RedditIcon,
   FacebookIcon
 } from "react-share";
-
-import AdSense from "react-adsense";
 
 const DailyStore = props => {
   const [loaded, setLoaded] = useState(false);
@@ -45,8 +44,12 @@ const DailyStore = props => {
       refresh.setHours(10);
       hours = Math.abs(today - refresh) / 36e5;
     }
+    
+    if(hours === 1) {
+      return hours + " hour remaining"
+    }
 
-    return hours;
+    return hours + " hours remaining"
   };
 
   return (
@@ -59,13 +62,13 @@ const DailyStore = props => {
           <FacebookIcon />
         </FacebookShareButton>
         <RedditShareButton
-         url="www.fndatahub.com"
+          url="www.fndatahub.com"
           title="Check out the current Fornite Daily Store! "
         >
           <RedditIcon />
         </RedditShareButton>
         <TwitterShareButton
-           url="www.fndatahub.com"
+          url="www.fndatahub.com"
           title="Check out the current Fornite Daily Store! www.fndatahub.com"
           hashtags={["fornite", "battleroyale", "dailystore"]}
         >
@@ -73,27 +76,13 @@ const DailyStore = props => {
         </TwitterShareButton>
       </div>
       <Container className="mb-5">
-        {/* <AdSense.Google
-          client="ca-pub-7186953014182323"
-          slot="7806394673"
-          style={{ width: 500, height: 100, backgroundColor: "grey"}}
-          format=""
-        /> */}
-        <AdSense.Google
-          client="ca-pub-7186953014182323"
-          slot="7806394673"
-          style={{ display: "block", backgroundColor: "grey", marginTop: 15 }}
-          format="auto"
-          responsive="true"
-        />
-        {/* <img src="https://storage.googleapis.com/support-kms-prod/SNP_59D432450939ECC60A21BEDBEE985B1817B1_3094744_en_v2" /> */}
         <Row className="align-items-center">
           <Col>
             <h1 className="mt-4 align-left fn-text l-grey">Daily Store</h1>
           </Col>
           <Col>
             <h4 className="text-right mb-0">
-              {`${dateNow()} hours remaining`}
+              {`${dateNow()}`}
             </h4>
           </Col>
         </Row>
@@ -124,25 +113,7 @@ const DailyStore = props => {
               Try refresh the page. If that doesn't work, try again soon.
             </h4>
           </div>
-          // <div className="text-center error-div">
-
-          // </div>
         )}
-
-        {/* {!loaded 
-           <div className="notfound-container" style={{minHeight: "600px"}}>
-           {!loaded && (
-               <div className="notfound-element" >
-                 <Spinner size="lg" color="primary" />
-               </div>
-             )}
-             {loaded && requestError && (
-               // <div className="text-center error-div">
-                 <h1 className="text-center notfound-element">Yikes. An error has occurred.</h1>
-               // </div>
-             )}
-           </div>
-        }} */}
 
         <Fade in={loaded}>
           <Row>
@@ -166,19 +137,6 @@ const DailyStore = props => {
             })}
           </Row>
         </Fade>
-        <Container>
-          <AdSense.Google
-            client="ca-pub-7186953014182323"
-            slot="7806394673"
-            style={{
-              display: "block",
-              backgroundColor: "grey",
-              marginTop: 15
-            }}
-            format="auto"
-            responsive="true"
-          />
-        </Container>
       </Container>
     </div>
   );
