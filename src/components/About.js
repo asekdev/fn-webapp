@@ -21,7 +21,7 @@ const About = props => {
             sm="12"
             xs="12">
               <h5>
-                Hi there, I'm Andy - a developer from Melbourne, Australia. I build
+                Hi there, I'm Andy - a developer from Melbourne, Australia. I built
                 this website so that you no longer need to log into the game to see the
                 daily store.
               </h5>
