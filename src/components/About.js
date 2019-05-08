@@ -26,7 +26,7 @@ const About = props => {
                 log into the game everyday to see the daily store.
               </h5>
               <h5 className="mt-4">
-                Additonally, you an find the upcoming items that may appear
+                Additionally, you can find the upcoming items that may appear
                 either in the item shop - or can be obtained by completing
                 challenges.
               </h5>
