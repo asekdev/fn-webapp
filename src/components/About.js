@@ -21,9 +21,9 @@ const About = props => {
             sm="12"
             xs="12">
               <h5>
-                Hiya, I'm Andy - a developer from Melbourne, Australia. I
-                decided to build this website to solve the problem of having to
-                log into the game everyday to see the daily store.
+                Hi there, I'm Andy - a developer from Melbourne, Australia. I build
+                this website so that you no longer need to log into the game to see the
+                daily store.
               </h5>
               <h5 className="mt-4">
                 Additionally, you can find the upcoming items that may appear
@@ -53,7 +53,6 @@ const About = props => {
                 </form>
               </h5>
               <h5 className="mt-4">Enjoy the site!</h5>
-              <h3 className="mt-4">- Andy</h3>
             </Col>
             <Col
              xl="5"

@@ -53,9 +53,11 @@ const UpcomingItems = props => {
       <Container className="mb-5">
         <h1 className="mt-4 align-left fn-text l-grey">Upcoming Items</h1>
         {!loaded && !error && (
-          <div className="text-center">
+          <div className="notfound-container" style={{ minHeight: "600px" }}>
+          <div className="notfound-element">
             <Spinner size="lg" color="primary" />
           </div>
+        </div>
         )}
         {loaded && error && (
           <div className="notfound-container" style={{ minHeight: "600px" }}>
