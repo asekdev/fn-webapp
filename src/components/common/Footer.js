@@ -14,18 +14,18 @@ const Footer = () => {
                 About
               </a>
             </p>
-            <p className="text-muted text-center">
+            {/* <p className="text-muted text-center">
               <a href="/privacy" className="text-muted">
                 Privacy
               </a>
-            </p>
+            </p> */}
             <p className="text-muted text-center">
               <a href="/contact" className="text-muted">
                 Contact
               </a>
             </p>
             <p className="text-muted text-center">
-              All rights are to Epic Games. &trade;
+              All rights are to Epic Games&trade;
             </p>
           </Col>
           <Col xs="12" sm="12" md="6">

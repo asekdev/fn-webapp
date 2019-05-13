@@ -22,7 +22,7 @@ class Routes extends Component {
         <Route exact path="/news" component={News} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/privacy" component={Privacy} />
+        {/* <Route exact path="/privacy" component={Privacy} /> */}
         <Route component={NotFound} />
       </Switch>
     );

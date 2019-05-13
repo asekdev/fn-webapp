@@ -11,7 +11,7 @@ import Dab from "../assets/images/dab.png";
 const About = props => {
   return (
     <div>
-      <Container className="mb-5">
+      <Container className="mb-5 mt-5">
         <h1 className="mt-4 align-left fn-text l-grey">About</h1>
         <div style={{ minHeight: "500px" }}>
           <Row>
